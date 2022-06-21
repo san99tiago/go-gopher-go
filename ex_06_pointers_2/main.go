@@ -10,12 +10,10 @@ import (
 	"fmt"
 )
 
-
-
 func main() {
 	fmt.Println("\n---------- TEST 01 ----------")
 	test_01()
-	
+
 	fmt.Println("\n---------- TEST 02 ----------")
 	test_02()
 }
@@ -23,7 +21,7 @@ func main() {
 func test_01() {
 	var name = "Santiago"
 	var point_to_name = &name
-	
+
 	fmt.Println("\n***** BEFORE CHANGE *****")
 	fmt.Println("--> name is: ", name)
 	fmt.Println("--> *point_to_name is: ", *point_to_name)
