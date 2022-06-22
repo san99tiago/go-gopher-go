@@ -1,3 +1,3 @@
 module example.com/functions_for
 
-go 1.17
+go 1.18

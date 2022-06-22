@@ -32,6 +32,7 @@ func find_name_1(name string, names []string) {
 	for i := 0; i < len(names); i++ {
 		if names[i] == name {
 			fmt.Println("Name '", name, "' was found!")
+			break
 		}
 	}
 }
@@ -41,6 +42,7 @@ func find_name_2(name string, names []string) {
 	for index, item := range names {
 		if item == name {
 			fmt.Println("Name '", name, "' was found at index", index, "!")
+			break
 		}
 	}
 }

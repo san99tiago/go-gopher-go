@@ -1,3 +1,3 @@
 module example.com/vars_arrays
 
-go 1.17
+go 1.18

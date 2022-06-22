@@ -10,6 +10,7 @@ This project was created based on multiple online tutorials and resources, such 
 - [Learn Go Programming - Golang Tutorial for Beginners --> By: freeCodeCamp.org](https://youtu.be/YS4e4q9oBaU)
 - [Golang Tutorial for Beginners | Full Go Course --> By: TechWorld with Nana](https://youtu.be/yyUHQIec83I)
 - [Learn Go Programming by Building 11 Projects --> By: freeCodeCamp.org](https://youtu.be/jFfo23yIWac?list=PLyTv82e1M2id7LhMZs6XSQHwE3wixOxke)
+- [Golang Tutorials --> By: Tech With Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q)
 
 This repository covers the theory and basic concepts of Golang applications, good practices and some cool examples (from scratch).<br>
 
