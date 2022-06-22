@@ -1,12 +1,10 @@
-// Golang program to illustrate a function and simple for/forr loops
+// Golang program to illustrate functions and for/for_range loops
 // Santiago Garcia Arango
 
 // Including main package
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	fmt.Println("\n********** Starting processing of names **********")
@@ -23,8 +21,12 @@ func main() {
 	fmt.Println("NUMBERS: ", numbers)
 
 	// This functions illustrates double "for" solutions with elements and indexes used
-	find_duplicates_1(numbers)
-	find_duplicates_2(numbers)
+	duplicates_1 := find_duplicates_1(numbers)
+	fmt.Println("Duplicates are: ", duplicates_1)
+	duplicates_2 := find_duplicates_2(numbers)
+	fmt.Println("Duplicates are: ", duplicates_2)
+	max, min, total := find_important_values(numbers)
+	fmt.Printf("The important values are:\n-->Max: %d\n-->Min: %d\n-->Total: %d\n", max, min, total)
 }
 
 func find_name_1(name string, names []string) {
@@ -47,7 +49,7 @@ func find_name_2(name string, names []string) {
 	}
 }
 
-func find_duplicates_1(numbers []int) {
+func find_duplicates_1(numbers []int) []int {
 	fmt.Println("\n----- Finding duplicates of array ----")
 	var duplicates []int
 	for i, element_1 := range numbers {
@@ -57,10 +59,10 @@ func find_duplicates_1(numbers []int) {
 			}
 		}
 	}
-	fmt.Println("Duplicates are: ", duplicates)
+	return duplicates
 }
 
-func find_duplicates_2(numbers []int) {
+func find_duplicates_2(numbers []int) []int {
 	fmt.Println("\n----- Finding duplicates of array ----")
 	var duplicates []int
 	for i, element_1 := range numbers {
@@ -71,5 +73,25 @@ func find_duplicates_2(numbers []int) {
 			}
 		}
 	}
-	fmt.Println("Duplicates are: ", duplicates)
+	return duplicates
+}
+
+func find_important_values(numbers []int) (max, min, total int) {
+	fmt.Println("\n----- Finding important values of array ----")
+	// These don't need type declaration here (already at func declaration)
+	max = numbers[0]
+	min = numbers[0]
+	total = 0
+
+	for i := 0; i < len(numbers); i++ {
+		if numbers[i] > max {
+			max = numbers[i]
+		}
+		if numbers[i] < min {
+			min = numbers[i]
+		}
+		total += numbers[i]
+	}
+	// When return values are at func declaration, we could also use only "return"
+	return max, min, total
 }

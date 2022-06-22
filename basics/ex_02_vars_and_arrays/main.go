@@ -1,4 +1,4 @@
-// Golang program to illustrate variable usage
+// Golang program to illustrate variables usage
 // Santiago Garcia Arango
 
 // Including main package
@@ -45,13 +45,26 @@ func main() {
 
 	arr_3 := [8]int{0, 1, 1, 2, 3, 5, 8, 13}
 
-	fmt.Println("\n********* Showing local variables********* ")
+	// MAPS
+	var map_1 map[string]string = map[string]string{
+		"name":      "Santiago",
+		"last_name": "Garcia",
+		"role":      "DevOps",
+	}
+
+	map_2 := make(map[string]string)
+	map_2["programming_language"] = "Python"
+	map_2["iac_language"] = "Terraform"
+	map_2["api_protocol"] = "REST"
+	map_2["cloud"] = "AWS"
+
+	fmt.Println("\n********* Showing local variables ********* ")
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "var_1", var_1, var_1)
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "var_2", var_2, var_2)
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "var_3", var_3, var_3)
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "var_4", var_4, var_4)
 
-	fmt.Println("\n********* Showing global variables********* ")
+	fmt.Println("\n********* Showing global variables ********* ")
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "cool_constant", cool_constant, cool_constant)
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "name", name, name)
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "last_name", last_name, last_name)
@@ -64,12 +77,16 @@ func main() {
 	var my_new_age float32
 	my_new_age = float32(age)
 
-	fmt.Println("\n********* Showing converted variables********* ")
+	fmt.Println("\n********* Showing converted variables ********* ")
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "my_new_cool_constant", my_new_cool_constant, my_new_cool_constant)
 	fmt.Printf("%s variable value is: %v, and is of type: %T \n", "my_new_age", my_new_age, my_new_age)
 
-	fmt.Println("\n********* Showing arrays********* ")
+	fmt.Println("\n********* Showing arrays ********* ")
 	fmt.Printf("%s variable value is: %v, is of type: %T, and has a total of %v elements \n", "arr_1", arr_1, arr_1, len(arr_1))
 	fmt.Printf("%s variable value is: %v, is of type: %T, and has a total of %v elements \n", "arr_2", arr_2, arr_2, len(arr_2))
 	fmt.Printf("%s variable value is: %v, is of type: %T, and has a total of %v elements \n", "arr_3", arr_3, arr_3, len(arr_3))
+
+	fmt.Println("\n********* Showing maps ********* ")
+	fmt.Printf("%s variable value is: %v, is of type: %T, and has a total of %v elements \n", "map_1", map_1, map_1, len(map_1))
+	fmt.Printf("%s variable value is: %v, is of type: %T, and has a total of %v elements \n", "map_2", map_2, map_2, len(map_2))
 }
