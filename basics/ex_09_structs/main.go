@@ -40,25 +40,51 @@ func main() {
 	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "frailejon", frailejon, frailejon)
 	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "frailejon.age", frailejon.age, frailejon.age)
 
-	fmt.Println("\n********** EXAMPLE 3 (struct with pointer of other struct)**********")
-	a_cool_student := Student{
+	fmt.Println("\n********** EXAMPLE 3 (struct with pointer of other struct and methods)**********")
+	var a_cool_student Student = Student{
 		university: "EIA University",
-		gpa:        4.73,
+		grades:     []float32{5.0, 4.5},
 		person:     &santi,
 	}
 	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "a_cool_student", a_cool_student, a_cool_student)
 	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "a_cool_student.person", a_cool_student.person, a_cool_student.person)
 	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "a_cool_student.person.name", a_cool_student.person.name, a_cool_student.person.name)
+
+	fmt.Println("\n--> [OPERATION] student_gpa = a_cool_student.get_gpa()")
+	student_gpa := a_cool_student.get_gpa()
+	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "student_gpa", student_gpa, student_gpa)
+
+	fmt.Println("\n--> [OPERATION] a_cool_student.add_grade(4.8)")
+	a_cool_student.add_grade(4.8)
+	fmt.Println("\n--> [OPERATION] student_gpa_updated := a_cool_student.get_gpa()")
+	student_gpa_updated := a_cool_student.get_gpa()
+	fmt.Printf("\t[%s] has type of: [%T] and its value is: [%v]\n", "student_gpa_updated", student_gpa_updated, student_gpa_updated)
 }
 
+// PERSON STRUCT
 type Person struct {
 	name      string
 	last_name string
 	age       uint32
 }
 
+// STUDENT STRUCT THAT USES THE PERSON'S STRUCT
 type Student struct {
 	university string
-	gpa        float32
+	grades     []float32
 	person     *Person
+}
+
+// METHODS FOR STUDENT STRUCT (BE CAREFUL TO USE POINTERS FOR 'SETTERS')
+func (s *Student) add_grade(grade float32) {
+	s.grades = append(s.grades, grade)
+}
+
+func (s Student) get_gpa() float32 {
+	var sum float32 = 0
+	for i := 0; i < len(s.grades); i++ {
+		sum += (s.grades[i])
+	}
+	avg := (float32(sum)) / (float32(len(s.grades)))
+	return avg
 }
