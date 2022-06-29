@@ -4,13 +4,14 @@ This repository covers the basics of [Go Language (golang)](https://go.dev) from
 
 ## Golang Basics and Tutorials :anchor:
 
-This project was created based on multiple online tutorials and resources, such as:
+These projects were created based on multiple online tutorials and resources, such as:
 
 - [Go Documentation --> By: Official Go Community](https://go.dev/doc/)
 - [Learn Go Programming - Golang Tutorial for Beginners --> By: freeCodeCamp.org](https://youtu.be/YS4e4q9oBaU)
 - [Golang Tutorial for Beginners | Full Go Course --> By: TechWorld with Nana](https://youtu.be/yyUHQIec83I)
 - [Learn Go Programming by Building 11 Projects --> By: freeCodeCamp.org](https://youtu.be/jFfo23yIWac?list=PLyTv82e1M2id7LhMZs6XSQHwE3wixOxke)
 - [Golang Tutorials --> By: Tech With Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-mtY_SE3HuzQJzuj4VlUG0q)
+- ["Concurrency is not Parallelism --> By: RobPike"](https://youtu.be/oV9rvDllKEg?list=PLyTv82e1M2ifB0xYEcU076x_TfGcOOkoM)
 
 This repository covers the theory and basic concepts of Golang applications, good practices and some cool examples (from scratch).<br>
 
