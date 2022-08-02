@@ -50,6 +50,7 @@ func main() {
 	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
 
 	fmt.Printf("Initializing server at port: 9000\n")
+	fmt.Printf("Endpoint for the server is:  http://localhost:9000/movies")
 	log.Fatal(http.ListenAndServe(":9000", r))
 
 }
@@ -137,8 +138,23 @@ func createMovie(w http.ResponseWriter, r *http.Request) {
 }
 
 func updateMovie(w http.ResponseWriter, r *http.Request) {
-	//TODO
+	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r)
+	for index, item := range movies {
+		if item.Id == params["id"] {
+			movies = append(movies[:index], movies[index+1:]...)
+			var movie Movie
+			_ = json.NewDecoder(r.Body).Decode(&movie)
+			movie.Id = params["id"]
+			movies = append(movies, movie)
 
+			responseMessage := fmt.Sprintf("Movie with id: %s, was edited", params["id"])
+			fmt.Println(responseMessage)
+			json.NewEncoder(w).Encode(movie)
+
+			return
+		}
+	}
 }
 
 func deleteMovie(w http.ResponseWriter, r *http.Request) {
